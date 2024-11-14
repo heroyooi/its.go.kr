@@ -1,0 +1,1459 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    
+    <title>ITS 국가교통정보센터(National Transport Information Center)</title>
+    
+        <!-- 타이틀을 페이지별로 동적으로 설정 -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="ITS 국가교통정보센터">
+    <meta property="og:description" content="ITS 국가교통정보센터">
+    <meta property="og:image" content="https://its.go.kr/css/images/main/shortcut_bg02.png">
+    <meta property="og:url" content="https://its.go.kr">
+    <meta name="theme-color" content="#000000">
+    <meta name="robots" content="ALL">
+    <meta name="title" content="ITS 국가교통정보센터">
+    <meta name="keywords" content="ITS 국가교통정보센터">
+    <meta name="description" content="ITS 국가교통정보센터">
+    <meta name="content-language" content="kr">
+    <meta name="ctx"
+          content="/">
+    <meta name="_csrf" content="t">
+    <meta name="_csrf_header" content="_csrf">
+    <link rel="dns-prefetch" href="https://its.go.kr/fonts.gstatic.com" >
+    <link rel="dns-prefetch" href="https://its.go.kr/fonts.googleapis.com" >
+    <link rel="preconnect" href="https://its.go.kr/its.go.kr">
+    <link rel="preconnect" href="https://its.go.kr/its.go.kr:9443">
+    <!--<link rel="preconnect" href="https://its.go.kr/firebase.googleapis.com">
+    <link rel="preconnect" href="https://its.go.kr/www.qstatic.com">
+    <link rel="preconnect" href="https://its.go.kr/www.googletagmanager.com">-->
+    <link rel="preconnect" href="https://its.go.kr/d-collector.jennifersoft.com">
+    <link rel="preconnect" href="https://its.go.kr/nrbe.pstatic.net">
+    <link rel="preconnect" href="https://its.go.kr/oapi.map.naver.com">
+    <link rel="preconnect" href="https://its.go.kr/api.vworld.kr">
+    <link rel="canonical" href="https://its.go.kr">
+    <link rel="preload" as="font" href="https://its.go.kr/css/design/font/NotoSansCJKkr-Regular.woff" type="font/woff" crossorigin="anonymous">
+    <link rel="preload" as="font" href="https://its.go.kr/css/design/font/NotoSansCJKkr-Black.woff" type="font/woff" crossorigin="anonymous">
+    <link rel="preload" as="font" href="https://its.go.kr/css/design/font/NotoSansCJKkr-Medium.woff" type="font/woff" crossorigin="anonymous">
+    <link rel="preload" as="font" href="https://its.go.kr/css/design/font/NotoSansCJKkr-Bold.woff" type="font/woff" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="https://its.go.kr/webjars/jquery-ui/1.13.2/jquery-ui.min.css">
+    <link type="text/css" rel="stylesheet" href="https://its.go.kr/webjars/jquery-ui/1.13.2/jquery-ui.theme.min.css">
+    <link type="text/css" rel="stylesheet" href="https://its.go.kr/webjars/toastr/2.1.2/build/toastr.min.css">
+    <link rel="stylesheet" href="https://its.go.kr/css/design/font.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://its.go.kr/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://its.go.kr/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://its.go.kr/favicon-16x16.png">
+    <link rel="shortcut icon" href="https://its.go.kr/favicon.ico">
+    <link rel="manifest" href="https://its.go.kr/manifest.webmanifest" crossorigin="use-credentials">
+    
+    <link rel="stylesheet" href="https://its.go.kr/css/design/main.css">
+    <link rel="stylesheet" href="https://its.go.kr/css/custom.css?d=202302031300">
+    <link rel="stylesheet" href="https://its.go.kr/webjars/chart.js/2.9.4/dist/Chart.min.css">
+
+    <!--<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>-->
+    <script src="https://its.go.kr/webjars/es6-promise/4.2.8/dist/es6-promise.min.js"></script>
+    <!--<script th:src="@{/webjars/async/3.2.0/dist/async.min.js}"></script>-->
+    <script src="https://its.go.kr/js/lib/Notification.min.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <!--<script defer src="https://www.gstatic.com/firebasejs/8.2.0/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.2.0/firebase-messaging.js"></script>-->
+    <!--<script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-analytics.js"></script>-->
+
+    <script src="https://its.go.kr/service-worker.js"></script>
+    <script src="https://its.go.kr/webjars/mustache/4.2.0/mustache.min.js"></script>
+    <script src="https://its.go.kr/webjars/jquery/3.7.0/dist/jquery.min.js"></script>
+    <script src="https://its.go.kr/webjars/jquery-ui/1.13.2/jquery-ui.min.js"></script>
+    <script src="https://its.go.kr/webjars/jquery-blockui/2.70/jquery.blockUI.js"></script>
+    <script src="https://its.go.kr/webjars/slick/1.8.0/slick.min.js"></script>
+    <script src="https://its.go.kr/webjars/toastr/2.1.2/build/toastr.min.js"></script>
+    <script src="https://its.go.kr/js/design/common.js"></script>
+    <script src="https://its.go.kr/js/common/common.js"></script>
+    <script>
+        (function(j,ennifer) {
+            j['dmndata']=[];j['jenniferFront']=function(args){window.dmndata.push(args)};
+            j['dmnaid']=ennifer;j['dmnatime']=new Date();j['dmnanocookie']=false;j['dmnajennifer']='JENNIFER_FRONT@INTG';
+        }(window, '37d08100'));
+    </script>
+    <script async src="https://its.go.kr/d-collect.jennifersoft.com/37d08100/demian.js"></script>
+    <script>
+        jenniferFront({
+            set: {
+                filter: {
+                    localhost: true
+                }
+            }
+        });
+    </script>
+    <!--<script src="https://its.go.kr/wcs.naver.net/wcslog.js"></script>
+    <script>
+        if(!wcs_add) var wcs_add = {};
+        wcs_add["wa"] = "13d9f8e2bc6c0a0";
+        if(window.wcs) {
+            wcs_do();
+        }
+    </script>-->
+    
+    <script src="https://its.go.kr/js/design/main.js"></script>
+    <!--<link rel="stylesheet" th:href="@{/webjars/openlayers/ol.css}"/>-->
+    <!--<link rel="stylesheet" th:href="@{/js/lib/ol-v7.3.0/ol.css}"/>-->
+    <link rel="stylesheet" href="https://its.go.kr/js/lib/ol-v8.0.0/ol.css">
+    <script src="https://its.go.kr/webjars/proj4/2.9.0/dist/proj4.js"></script>
+    <!--<script th:src="@{/webjars/openlayers/ol.js}"></script>-->
+    <!--<script th:src="@{/js/lib/ol-v7.3.0/dist/ol.js}"></script>-->
+    <script src="https://its.go.kr/js/lib/ol-v8.0.0/dist/ol.js"></script>
+    <script src="https://its.go.kr/js/lib/turf/turf.min.js"></script>
+    <script src="https://its.go.kr/js/lib/hlsjs/dist/hls.min.js"></script>
+    <script src="https://its.go.kr/webjars/html2canvas/1.0.0-rc.7/dist/html2canvas.min.js"></script>
+    <script src="https://its.go.kr/webjars/chart.js/2.9.4/dist/Chart.min.js"></script>
+    <script src="https://its.go.kr/js/lib/chartjs-plugin-labels.js"></script>
+    <script src="https://its.go.kr/webjars/filesaver/2.0.4/dist/FileSaver.min.js"></script>
+    <script src="https://its.go.kr/js/map/measure.js"></script>
+    <script src="https://its.go.kr/js/map/markerOl.js"></script>
+    <script src="https://its.go.kr/js/map/polylineOl.js"></script>
+    <script src="https://its.go.kr/js/map/mapOl.js"></script>
+<!--    <script th:src="@{/js/index/oauth.js}"></script>-->
+<!--    <script th:src="@{/js/index/sha1.js}"></script>-->
+    <script src="https://its.go.kr/js/map/mainMap.js?v=1"></script>
+
+    
+  <script id="acdnt_marker_popup_template" type="javascript/x-tmpl-mustache">
+    {{#data}}
+    <div class="" id="{{popId}}">
+      {{^isPc}}
+      <button type="button" id="{{btnId}}" class="btn type2" style="width: 100%">닫기</button>
+      {{/isPc}}
+      {{#isPc}}
+      <button type="button" id="{{btnId}}" class="close"></button>
+      {{/isPc}}
+    <div class="title_box">
+      {{#acdnt}}
+      <span class="tit red">{{titleType}}</span>
+      {{/acdnt}}
+      {{^acdnt}}
+      <span class="tit">{{titleType}}</span>
+      {{/acdnt}}
+      <strong class="title">{{title}}</strong>
+      </div>
+    <div class="contents_box">
+      <div class="tit_box">
+        <div class="cont">{{mssageCn}}</div>
+        <div class="tit">{{intrcpAt}}</div>
+        <div class="tit">{{lcInfo}}</div>
+        </div>
+      </div>
+    <div class="put_box">
+      <p>시작일시: {{occrrncTm}}</p>
+      <p>종료일시: {{edDt}}</p>
+      </div>
+    </div>
+    {{/data}}
+  </script>
+  <script id="constrct_marker_popup_template" type="javascript/x-tmpl-mustache">
+    {{#data}}
+    <div class="" id="{{popId}}">
+      {{^isPc}}
+      <button type="button" id="{{btnId}}" class="btn type2" style="width: 100%">닫기</button>
+      {{/isPc}}
+      {{#isPc}}
+      <button type="button" id="{{btnId}}" class="close"></button>
+      {{/isPc}}
+      <div class="title_box">
+        <span class="tit">{{outbrkTyNm}}</span>
+        <strong class="title">{{title}}</strong>
+      </div>
+      <div class="contents_box">
+        <div class="tit_box">
+          <div class="cont">{{mssageCn}}</div>
+          <div class="tit">{{intrcpAt}}</div>
+          <div class="tit">{{lcInfo}}</div>
+        </div>
+      </div>
+      <div class="put_box">
+        <p>시작일시: {{occrrncTm}}</p>
+        <p>종료일시: {{edDt}}</p>
+      </div>
+    </div>
+    {{/data}}
+  </script>
+  <script id="vms_marker_popup_template" type="javascript/x-tmpl-mustache">
+    {{#data}}
+    <div class="" id="{{popId}}">
+      {{^isPc}}
+      <button type="button" id="{{btnId}}" class="btn type2" style="width: 100%">닫기</button>
+      {{/isPc}}
+      {{#isPc}}
+      <button type="button" id="{{btnId}}" class="close"></button>
+      {{/isPc}}
+      <div class="title_box">
+        <span class="tit" style="color: #ecd41f;background-color:#111;">VMS</span>
+        <strong class="title">{{title}}</strong>
+      </div>
+      <div class="contents_box">
+        <div class="tit_box">
+          {{#mssageCn}}
+          <div class="cont" style="background: linear-gradient(0deg, #111, #222);
+                box-shadow: 0px 0px 2px 0px #aaa inset, 0px -1px 2px 0px #aaa inset, 2px -5px 5px 0px #111 inset, 0px -5px 5px 0px #111 inset, 2px 5px 5px 0px #111;
+                border-radius: 5px;
+                padding: 10px 10px 10px 10px;
+                font-weight: 500;color: #ecd41f;
+                text-align: center;">{{{epressCn}}}</div>
+          {{/mssageCn}}
+        </div>
+        <div class="tit"></div>
+      </div>
+    </div>
+    {{/data}}
+  </script>
+  <script id="cctv_marker_popup_template" type="javascript/x-tmpl-mustache">
+    {{#data}}
+    <div class="" id="{{popId}}">
+      {{^isPc}}
+      <button type="button" id="{{btnId}}" class="btn type2" style="width: 100%">닫기</button>
+      {{/isPc}}
+      {{#isPc}}
+      <button type="button" id="{{btnId}}" class="close"></button>
+      {{/isPc}}
+      <div class="title_box">
+        <span class="tit" style="color: #fff;background-color:#15B0B1;">CCTV</span>
+        <strong class="title">{{title}}</strong>
+      </div>
+      <div class="contents_box" style="padding: 10px 5px 5px 5px;border: 1px solid whitesmoke;">
+        <div class="tit_box">
+          {{^isPc}}
+          <video id="video_{{cctvId}}_{{idx}}" width="286" height="200" controls style="object-fit: fill;" poster="{{imgUrl}}" crossorigin="anonymous"></video>
+          {{/isPc}}
+          {{#isPc}}
+          <video id="video_{{cctvId}}_{{idx}}" width="286" height="200" controls style="object-fit: fill;" poster="{{imgUrl}}" crossorigin="anonymous"></video>
+          {{/isPc}}
+        </div>
+      </div>
+	  {{#isPc}}
+      <div class="put_box">
+        <p style="text-align: center"><button id="btn_video_{{cctvId}}_{{idx}}" onclick="openFullscreenCommon(document.getElementById('video_{{cctvId}}_{{idx}}'))">전체화면</button></p>
+      </div>
+	  {{/isPc}}
+    </div>
+    {{/data}}
+  </script>
+  <script id="over_marker_popup_template" type="javascript/x-tmpl-mustache">
+    {{#data}}
+    <div class="" id="{{popId}}">
+      <div class="title_box">
+        <span class="tit" style="{{stClr}}">{{titleType}}</span>
+        <strong class="title">{{title}}</strong>
+      </div>
+    </div>
+    {{/data}}
+  </script>
+
+  <script id="notification_table_template" type="javascript/x-tmpl-mustache">
+        {{#data}}
+          <li>
+            <a href="javascript:{{func}}({{seq}})" class="contents_box" title="{{seq}}번 게시글">
+              <span class="title_box">
+                <span class="tit">{{manageTyNm}}</span>
+                <strong class="title">{{title}}</strong>
+              </span>
+              <span class="cont_box">
+                <span class="con">{{content}}</span>
+                <span class="other_box">
+                  <span>{{regDt}}</span>
+                  <span>{{wrterNm}}</span>
+                </span>
+              </span>
+            </a>
+          </li>
+        {{/data}}
+  </script>
+
+  <script id="faq_table_template" type="javascript/x-tmpl-mustache">
+        {{#data}}
+          <li>
+            <button type="button" class="bbs_question" title="{{title}}">
+              <span>질문</span><strong>{{manageTyNm}}</strong>{{title}}
+            </button>
+            <div class="bbs_answer_area" style="display: none">
+              <div class="bbs_answer">
+                <span class="answer_tit">답변</span>
+                {{{answer}}}
+                {{#files}}
+                  <div class="bbs_answer_file">
+                    <img src="{{fileSrc}}" alt="{{fileStreNm}}">
+                  </div>
+                {{/files}}
+              </div>
+              <div class="bbs_answer_btn">
+                <button type="button" class="close">닫기</button>
+                <button type="button" class="close">닫기</button>
+              </div>
+            </div>
+          </li>
+        {{/data}}
+  </script>
+
+  <script id="qna_table_template" type="javascript/x-tmpl-mustache">
+    {{#data}}
+    {{^reqAnswer}}
+      <tr onclick="onclickRow(this)" data-seq="{{seq}}" data-stype="q" style="cursor: pointer">
+        <td>{{reqSttusTy}}</td>
+        <td class="subject">
+          <a href="javascript:{{func}}({{seq}})" title="{{title}}">{{title}}</a>
+        </td>
+        <td>{{regDt}}</td>
+      </tr>
+    {{/reqAnswer}}
+    {{#reqAnswer}}
+      <tr onclick="onclickRow(this)" data-seq="{{seq}}" data-stype="a" style="cursor: pointer">
+        <td>{{reqSttusTy}}</td>
+        <td class="subject">
+          <a href="javascript:{{aFunc}}({{seq}})" title="{{title}}">{{title}}</a>
+        </td>
+        <td>{{regDt}}</td>
+      </tr>
+      <tr onclick="onclickRow(this)" data-seq="{{seq}}" data-stype="a" style="cursor: pointer">
+        <td></td>
+        <td class="subject">
+          <span class="bbs_ico reply">댓글</span>
+          <a href="javascript:{{aFunc}}({{seq}})" title="답글: {{title}}">re: {{title}}</a>
+        </td>
+        <td>{{reqAnswerDt}}</td>
+      </tr>
+    {{/reqAnswer}}
+    {{/data}}
+  </script>
+
+  <script id="nodelink_qna_table_template" type="javascript/x-tmpl-mustache">
+    {{#data}}
+    {{^reqAnswer}}
+    <tr onclick="onclickRow(this)" data-seq="{{seq}}" data-stype="q" style="cursor: pointer">
+      <td>{{reqSttusTy}}</td>
+      <td class="subject">
+        <a href="javascript:{{func}}({{seq}})" title="{{title}}">{{title}}</a>
+      </td>
+      <td>{{location}}</td>
+      <td>{{roadRank}}</td>
+      <td>{{roadName}}</td>
+      <td>{{regDt}}</td>
+    </tr>
+    {{/reqAnswer}}
+    {{#reqAnswer}}
+    <tr onclick="onclickRow(this)" data-seq="{{seq}}" data-stype="a" style="cursor: pointer">
+      <td>{{reqSttusTy}}</td>
+      <td class="subject">
+        <a href="javascript:{{aFunc}}({{seq}})" title="{{title}}">{{title}}</a>
+      </td>
+      <td>{{location}}</td>
+      <td>{{roadRank}}</td>
+      <td>{{roadName}}</td>
+      <td>{{regDt}}</td>
+    </tr>
+    <tr onclick="onclickRow(this)" data-seq="{{seq}}" data-stype="a" style="cursor: pointer">
+      <td></td>
+      <td class="subject">
+        <span class="bbs_ico reply">댓글</span>
+        <a href="javascript:{{aFunc}}({{seq}})" title="답글: {{title}}">re: {{title}}</a>
+      </td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>{{reqAnswerDt}}</td>
+    </tr>
+    {{/reqAnswer}}
+    {{/data}}
+  </script>
+
+  <script id="homepage_table_paging_template" type="javascript/x-tmpl-mustache">
+        {{#data}}
+          <a href="javascript:{{func}}({{firstPage}})" class="prev_end">처음 페이지</a>
+          <a href="javascript:{{func}}({{prevPage}})" class="prev_one">이전 페이지</a>
+          {{#pages}}
+            {{#current}}
+              <strong title="현재 {{page}}페이지">{{page}}</strong>
+            {{/current}}
+            {{^current}}
+              <a href="javascript:{{func}}({{page}})" title="{{page}}페이지 이동">{{page}}</a>
+            {{/current}}
+          {{/pages}}
+          <a href="javascript:{{func}}({{nextPage}})" class="next_one">다음 페이지</a>
+          <a href="javascript:{{func}}({{lastPage}})" class="next_end">끝 페이지</a>
+        {{/data}}
+  </script>
+  <script id="map_side_template" type="javascript/x-tmpl-mustache">
+    <div class="map_side">
+      <h3 class="skip">교통지도 메뉴</h3>
+      <button type="button" class="open">교통지도 메뉴 열기</button>
+      <ul class="clearfix">
+        <li><a href="https://its.go.kr/map/searchLocation">검색</a></li>
+        <li><a href="https://its.go.kr/map/cctv">CCTV</a></li>
+        <li><a href="https://its.go.kr/map/traffic">교통정보</a></li>
+        <li><a href="https://its.go.kr/map/outbreak">돌발정보</a></li>
+        <li><a href="https://its.go.kr/map/detour">우회도로</a></li>
+        <li><a href="https://its.go.kr/map/travelTime">도시간 소요시간</a></li>
+        <li><a href="https://its.go.kr/map/favorite">관심구간 설정</a></li>
+        <li><a href="https://its.go.kr/map/statistics">통계정보</a></li>
+      </ul>
+      <button type="button" class="close">교통지도 메뉴 닫기</button>
+    </div>
+  </script>
+  <script id="map_location_template" type="javascript/x-tmpl-mustache">
+    <div class="map_location">
+            <div class="title_box">
+                <h3 class="skip">위치정보</h3>
+                <button type="button" class="open">위치정보 선택 상자 열기</button>
+                <span class="cont_box">
+                                        <span class="cont" id="span_location"></span>
+                                        <span class="weather">
+                                            <img id="img_temp" src="https://its.go.kr/css/images/template/tab_off.png" alt="기상이미지">
+                                            <span class="temp" id="spn_temp"></span>
+                                        </span>
+                                    </span>
+            </div>
+            <div class="contents_box">
+                <ul id="ul_cityList">
+                </ul>
+            </div>
+        </div>
+  </script>
+  <script id="map_detail_template" type="javascript/x-tmpl-mustache">
+    <div class="map_detail">
+      <div class="title_box">
+        <h3 class="skip">지도 세부사항 설정</h3>
+        <button type="button" class="open">지도 세부사항 선택 상자 열기</button>
+      </div>
+      <div class="contents_box">
+        <ul class="clearfix">
+          <li class="list1" style="display: none;">
+            <button type="button" id="btn_temp">소통정보</button>
+          </li>
+          <li class="list2" style="display: none;">
+            <button type="button" id="btn_cctv" onclick="toggleCctvMarker(false,this)">CCTV</button>
+          </li>
+          <li class="list3">
+            <button type="button" id="btn_area" onclick="toggleRegionBoundariesLayer(this)">지역경계</button>
+          </li>
+          <li class="list4">
+            <button type="button" id="btn_label" onclick="toggleLabelLayer(this)" class="on">명칭</button>
+          </li>
+          <li class="list5">
+            <button type="button" id="btn_constrt" onclick="toggleConstrctMarker(false,this)">공사정보</button>
+          </li>
+          <li class="list6">
+            <button type="button" id="btn_acdnt" onclick="toggleAccidentMarker(false,this)">사고정보</button>
+          </li>
+          <li class="list7">
+            <button type="button" id="btn_vms" onclick="toggleVmsMarker(false,this)">VMS</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </script>
+  <script id="map_choose_template" type="javascript/x-tmpl-mustache">
+    <div class="map_choose">
+      <h3 class="skip">지도 선택</h3>
+      <ul class="clearfix">
+        <li>
+          <button type="button" class="on" onclick="normalMaptype(this)">일반지도</button>
+        </li>
+        <li>
+          <button type="button" onclick="satelliteMaptype(this)">위성지도</button>
+        </li>
+      </ul>
+    </div>
+  </script>
+  <script id="map_cctv_template" type="javascript/x-tmpl-mustache">
+    <div class="map_cctv">
+    <div class="title_box">
+      <h3 class="skip">CCTV</h3>
+      <button type="button" id="btn_cctv2" class="open" onclick="toggleCctvMarker(false,this)">CCTV 열기</button>
+    </div>
+  </div>
+  </script>
+  <script id="map_communication_template" type="javascript/x-tmpl-mustache">
+    <div class="map_communication">
+          <div class="title_box">
+              <h3 class="skip">소통정보</h3>
+              <button type="button" class="open">소통정보 선택 상자 열기</button>
+          </div>
+          <div class="contents_box">
+              <ul class="clearfix">
+                  <li>
+                      <button type="button" id="btn_traffic" onclick="setRoadRank(this,'ALL')" class="on">전체</button>
+                  </li>
+                  <li>
+                      <button type="button" id="btn_trafficH" onclick="setRoadRank(this,'HIGHWAY')">고속도로</button>
+                  </li>
+                  <li>
+                      <button type="button" id="btn_trafficN" onclick="setRoadRank(this,'NATIONAL')">국도</button>
+                  </li>
+                  <li>
+                      <button type="button" id="btn_trafficL" onclick="setRoadRank(this,'LOCAL')">지방도</button>
+                  </li>
+                  <li>
+                      <button type="button" id="btn_trafficE" onclick="setRoadRank(this,'ETC')">일반도로</button>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </script>
+  <script id="map_service_template" type="javascript/x-tmpl-mustache">
+    <div class="map_service">
+        <h3 class="skip">지도 서비스</h3>
+        <div class="operation">
+            <button type="button" id="btn_current" class="current" onclick="getLocation()" style="background-color: rgb(255, 255, 255);">현재 위치</button>
+            <ul class="clearfix">
+                <li>
+                    <button type="button" onclick="plusZoom()">지도 확대</button>
+                </li>
+                <li>
+                    <button type="button" onclick="minusZoom()">지도 축소</button>
+                </li>
+            </ul>
+        </div>
+        <div class="link">
+            <ul class="clearfix">
+                <li>
+                    <button type="button" id="btn_capture" onclick="startCapture()" style="display:block;">저장</button>
+                </li>
+                <li>
+                    <button type="button" id="btn_share" onclick="shareUrl()">URL복사</button>
+                </li>
+                <li>
+                    <button type="button" id="area" onclick="toggleAreaButton()">면적</button>
+                </li>
+                <li>
+                    <button type="button" id="distance" onclick="toggleDistanceButton()">거리</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+  </script>
+  <script id="map_legend_template" type="javascript/x-tmpl-mustache">
+    <div class="map_legend">
+      <h3 class="skip">지도 범례</h3>
+      <button class="open">지도범례</button>
+      <div class="contents_box">
+        <table>
+          <caption>지도범례 - 도시부, 지방부, 도시고속, 고속도로 등의 안내</caption>
+          <colgroup>
+            <col style="width:20%;">
+            <col style="width:20%;">
+            <col style="width:20%;">
+            <col style="width:20%;">
+            <col style="width:20%;">
+          </colgroup>
+          <thead>
+          <tr>
+            <th scope="col">(Km/h)</th>
+            <th scope="col">도시부</th>
+            <th scope="col">지방부</th>
+            <th scope="col">도시고속</th>
+            <th scope="col">고속도로</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <th scope="row" title="녹색">원활</th>
+            <td>25이상</td>
+            <td>50이상</td>
+            <td>50이상</td>
+            <td>80이상</td>
+          </tr>
+          <tr>
+            <th scope="row" title="노란색">서행</th>
+            <td>15~25</td>
+            <td>30~50</td>
+            <td>30~50</td>
+            <td>40~80</td>
+          </tr>
+          <tr>
+            <th scope="row" title="빨간색">정체</th>
+            <td>15미만</td>
+            <td>30미만</td>
+            <td>30미만</td>
+            <td>40미만</td>
+          </tr>
+          <tr>
+            <th scope="row" title="회색">정보없음</th>
+            <td colspan="4">대상정보없음</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </script>
+
+
+</head>
+<!-- config fragment 사용 -->
+<body id="main" onload="pages.onpageload()">
+
+    <script defer src="https://oapi.map.naver.com/openapi/v3/maps.js?govClientId=r4mmqovgqk&amp;submodules=geocoder&amp;callback=initNaverMap"></script>
+    
+    
+
+<script>
+    var GEOSERVER = "https://its.go.kr:9443/geoserver/ntic/wms?",
+        VK = "7B8C67B4-9459-3B36-B8E2-59B0200E1F26";
+</script>
+<div class="accessibility">
+    <a href="#contents">본문 바로가기</a>
+</div>
+<div id="div_topHeader" style="background: #4f6280;display: inline-block;color: #fff;font-size: 14px;line-height: 30px;box-sizing: border-box;width: 100%;text-align: center;">
+    <p style="margin-top:5px;">
+        <img src="https://its.go.kr/css/images/contents/eg_logo.png" alt="전자정부" width="44" height="15">이 누리집은 대한민국 공식 전자정부 누리집입니다.
+    </p>
+</div>
+<hr>
+<div id="wrapper">
+    <!-- header fragment 사용 -->
+    <header id="header" class="close_popup" data-html2canvas-ignore="true">
+    <script src="https://its.go.kr/js/common/header.js?v=1"></script>
+    <!--<th:block th:switch="${@environment.getActiveProfiles()[0]}">
+        <script  th:case="'prdt'"
+                 th:src="@{/js/firebase/init-prdt-firebase.js}"></script>
+        <script  th:case="'stg'"
+                 th:src="@{/js/firebase/init-local-firebase.js}"></script>
+        <script  th:case="'local'"
+                 th:src="@{/js/firebase/init-local-firebase.js}"></script>
+    </th:block>-->
+    <script src="https://its.go.kr/js/common/ws.js"></script>
+    <div class="wrap">
+        <h1 class="logo"><a href="https://its.go.kr/">ITS 국가교통정보센터(National Transport Information Center)</a></h1>
+        <div class="gnb_box">
+            <div class="gnb"><!-- 로그인되었을 경우 아래 주석된 태그 사용(클래스 변경됩니다.) -->
+                <ul class="clearfix">
+                    <li><button type="button" class="add-home-screen" style="display: none" title="홈 화면 추가">홈 화면 추가</button></li>
+                    <li><a class="login" href="https://its.go.kr/user/login" rel="nofollow"><span>로그인</span></a></li>
+                    <li><a class="join" href="https://its.go.kr/user/signUp" rel="nofollow"><span>이메일 간편 가입</span></a></li>
+                    <li></li>
+                </ul>
+                
+            </div>
+        </div>
+        <!-- //gnb_box -->
+
+        <nav id="lnb_box">
+            <h2 class="skip">주메뉴</h2>
+            <button type="button" class="lnb_open">전체메뉴 열기</button>
+            <!--<button type="button" class="add-button">Add to home screen</button>-->
+            <div id="lnb">
+                <ul class="clearfix">
+                    <li class="depth1">
+                        <a href="https://its.go.kr/map/main" class="tit">교통지도</a>
+                        <div class="depth2">
+                            <ul class="clearfix">
+                                
+                                    
+                                
+                                    <li>
+                                        <a href="https://its.go.kr/map/searchLocation">검색</a>
+                                        
+                                        
+                                    </li>
+                                
+                                    <li>
+                                        <a href="https://its.go.kr/map/traffic">교통정보</a>
+                                        
+                                        
+                                    </li>
+                                
+                                    <li>
+                                        <a href="https://its.go.kr/map/outbreak">돌발검색</a>
+                                        
+                                        
+                                    </li>
+                                
+                                    <li>
+                                        <a href="https://its.go.kr/map/detour">우회도로</a>
+                                        
+                                        
+                                    </li>
+                                
+                                    <li>
+                                        <a href="https://its.go.kr/map/travelTime">도시간소요시간</a>
+                                        
+                                        
+                                    </li>
+                                
+                                    <li>
+                                        <a href="https://its.go.kr/map/favorite">관심구간</a>
+                                        
+                                        
+                                    </li>
+                                
+                                    <li>
+                                        <a href="https://its.go.kr/map/statistics">통계정보</a>
+                                        
+                                        
+                                    </li>
+                                
+                                    <li>
+                                        <a href="https://its.go.kr/map/cctv">CCTV</a>
+                                        
+                                        
+                                    </li>
+                                
+
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="depth1">
+                        <a href="https://its.go.kr/opendata/" class="tit">오픈데이터</a>
+                        <div class="depth2">
+                            <ul class="clearfix">
+                                
+                                    
+                                
+                                    <li>
+                                        <a href="https://its.go.kr/opendata/">오픈데이터 소개</a>
+                                        
+                                        
+                                    </li>
+                                
+                                    <li>
+                                        <a href="https://its.go.kr/opendata/opendataList">오픈데이터 목록</a>
+                                        
+                                        
+                                            <div class="depth3">
+                                                <ul class="clearfix">
+                                                    <li>
+                                                        <a href="https://its.go.kr/opendata/opendataList?service=traffic">교통소통정보</a></li>
+                                                    <li>
+                                                        <a href="https://its.go.kr/opendata/opendataList?service=event">돌발상황정보</a></li>
+                                                    <li>
+                                                        <a href="https://its.go.kr/opendata/opendataList?service=cctv">CCTV 화상자료</a></li>
+                                                    <li>
+                                                        <a href="https://its.go.kr/opendata/opendataList?service=fcTraffic">교통예측정보</a></li>
+                                                    <li>
+                                                        <a href="https://its.go.kr/opendata/opendataList?service=detectorInfo">차량검지정보</a></li>
+                                                    <li>
+                                                        <a href="https://its.go.kr/opendata/opendataList?service=vms">도로전광표지(VMS) 정보</a></li>
+                                                    <li>
+                                                        <a href="https://its.go.kr/opendata/opendataList?service=safeDriving">주의운전구간 정보</a></li>
+                                                    <li>
+                                                        <a href="https://its.go.kr/opendata/opendataList?service=vsl">가변형 속도제한표지정보(VSL)</a></li>
+                                                    <li>
+                                                        <a href="https://its.go.kr/opendata/opendataList?service=weakSection">취약구간정보</a></li>
+                                                    <li>
+                                                        <a href="https://its.go.kr/opendata/opendataList?service=nodelink">표준노드링크</a></li>
+                                                </ul>
+                                            </div>
+                                        
+                                    </li>
+                                
+                                    <li>
+                                        <a href="https://its.go.kr/opendata/reqOpendataQnaStatus">Q&amp;A</a>
+                                        
+                                        
+                                    </li>
+                                
+
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="depth1">
+                        <a href="https://its.go.kr/nodelink/" class="tit">표준노드링크</a>
+                        <div class="depth2">
+                            <ul class="clearfix">
+                                
+                                    
+                                
+                                    <li>
+                                        <a href="https://its.go.kr/nodelink/">노드링크 소개</a>
+                                        
+                                        
+                                    </li>
+                                
+                                    <li>
+                                        <a href="https://its.go.kr/nodelink/nodelinkStatus">노드링크 현황</a>
+                                        
+                                        
+                                            <div class="depth3">
+                                                <ul class="clearfix">
+                                                    <li>
+                                                        <a href="https://its.go.kr/nodelink/nodelinkStatus?service=spawnPoint">생성지점</a></li>
+                                                    <li>
+                                                        <a href="https://its.go.kr/nodelink/nodelinkStatus?service=creteriaForITS">지능형교통체계 구축기준</a></li>
+                                                    <li>
+                                                        <a href="https://its.go.kr/nodelink/nodelinkStatus?service=inquiryNodelink">표준노드링크 조회</a></li>
+                                                </ul>
+                                            </div>
+                                        
+                                    </li>
+                                
+                                    <li>
+                                        <a href="https://its.go.kr/nodelink/nodelinkRef">노드링크 자료실</a>
+                                        
+                                        
+                                    </li>
+                                
+                                    <li>
+                                        <a href="https://its.go.kr/nodelink/reqModifyNodelinkStatus">Q&amp;A</a>
+                                        
+                                        
+                                    </li>
+                                
+
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="depth1">
+                        <a href="https://its.go.kr/notification/notification" class="tit">알림마당</a>
+                        <div class="depth2">
+                            <ul class="clearfix">
+                                
+                                    
+                                
+                                    <li>
+                                        <a href="https://its.go.kr/notification/notification">공지사항</a>
+                                        
+                                        
+                                    </li>
+                                
+                                    <li>
+                                        <a href="https://its.go.kr/notification/faq">FAQ</a>
+                                        
+                                        
+                                    </li>
+                                
+                                    <li>
+                                        <a href="https://its.go.kr/notification/information">정보마당</a>
+                                        
+                                        
+                                    </li>
+                                
+                                    <li>
+                                        <a href="https://its.go.kr/notification/useInformation">이용정보</a>
+                                        
+                                        
+                                    </li>
+                                
+                                    <li>
+                                        <a href="https://its.go.kr/notification/relatedSites">관련사이트</a>
+                                        
+                                        
+                                    </li>
+                                
+                                    <li>
+                                        <a href="https://its.go.kr/notification/reqQnaStatus">Q&amp;A</a>
+                                        
+                                        
+                                    </li>
+                                
+
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="depth1">
+                        <a href="https://its.go.kr/information/introTrafficInfoCenter" class="tit">정보센터</a>
+                        <div class="depth2">
+                            <ul class="clearfix">
+                                
+                                    
+                                
+                                    <li>
+                                        <a href="https://its.go.kr/information/introTrafficInfoCenter">국가교통정보센터</a>
+                                        
+                                        
+                                    </li>
+                                
+                                    <li>
+                                        <a href="https://its.go.kr/information/introProvinceCenter">지방국토관리청</a>
+                                        
+                                        
+                                    </li>
+                                
+                                    <li>
+                                        
+                                        <a target="_blank"
+                                           href="https://intl.its.go.kr/">ITS 국제협력센터</a>
+                                        
+                                    </li>
+                                
+
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="depth1">
+                        <a href="https://its.go.kr/knowledge/introKnowledgeInfoCenter" class="tit">지식센터</a>
+                        <div class="depth2">
+                            <ul class="clearfix">
+                                
+                                    
+                                
+                                    <li>
+                                        <a href="https://its.go.kr/knowledge/introKnowledgeInfoCenter">지식정보센터</a>
+                                        
+                                        
+                                            <div class="depth3">
+                                                <ul class="clearfix">
+                                                    <li>
+                                                        <a href="https://its.go.kr/knowledge/introKnowledgeInfoCenter?service=introITS">ITS소개</a></li>
+                                                    <li>
+                                                        <a href="https://its.go.kr/knowledge/introKnowledgeInfoCenter?service=eduITS">ITS교육</a></li>
+                                                    <li>
+                                                        <a href="https://its.go.kr/knowledge/introKnowledgeInfoCenter?service=techITS">ITS기술</a></li>
+                                                    <li>
+                                                        <a href="https://its.go.kr/knowledge/introKnowledgeInfoCenter?service=policyITS">ITS정책</a></li>
+                                                    <li>
+                                                        <a href="https://its.go.kr/knowledge/introKnowledgeInfoCenter?service=statisticsITS">ITS통계</a></li>
+                                                    <li>
+                                                        <a href="https://its.go.kr/knowledge/introKnowledgeInfoCenter?service=domesticStandardITS">ITS국내표준</a></li>
+                                                    <li>
+                                                        <a href="https://its.go.kr/knowledge/introKnowledgeInfoCenter?service=standardITS">ITS국제표준</a></li>
+                                                    <li>
+                                                        <a href="https://its.go.kr/knowledge/introKnowledgeInfoCenter?service=standardLibraryITS">ITS표준자료실</a></li>
+                                                    
+                                                    
+                                                    
+                                                </ul>
+                                            </div>
+                                        
+                                    </li>
+                                
+                                    <li>
+                                        <a href="https://its.go.kr/knowledge/termSearchITS">ITS용어검색</a>
+                                        
+                                        
+                                            <div class="depth3">
+                                                <ul class="clearfix">
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    <li>
+                                                        <a href="https://its.go.kr/knowledge/architectureITS?service=introITSArchitecture">ITS아키텍처 소개</a></li>
+                                                    <li>
+                                                        <a href="https://its.go.kr/knowledge/architectureITS?service=nationalITSArchStruct">국가ITS아키텍쳐 구성</a></li>
+                                                    <li>
+                                                        <a href="https://its.go.kr/knowledge/architectureITS?service=serviceDefineITS">서비스정의</a></li>
+                                                </ul>
+                                            </div>
+                                        
+                                    </li>
+                                
+                                    <li>
+                                        <a href="https://its.go.kr/knowledge/architectureITS">ITS아키텍처</a>
+                                        
+                                        
+                                    </li>
+                                
+
+                            </ul>
+                        </div>
+                    </li>
+                    
+                </ul>
+            </div>
+            <button type="button" class="lnb_close">전체메뉴 닫기</button>
+        </nav>
+        <!-- //lnb -->
+        <div class="header_popup">
+            <!-- 상단 팝업 노출을 원하지 않을 경우 header에 클래스 close_popup 클래스 추가( <header id="header" class="close_popup"> ) -->
+            <h2 class="skip">교통정보 팝업</h2>
+            <button type="button" class="button_popup" title="팝업 닫힘">교통정보 팝업 열고 닫기</button>
+            <div class="popup_box">
+                <div class="date_box">
+                    <h3 class="skip">날짜정보</h3>
+                    <span class="date">2024.11.14</span>
+                    <!--<button type="button" class="add-button" title="Add to Home Screen">Add to home screen</button>-->
+                </div>
+                <div class="traffic_box">
+                    <h3 class="skip">교통정보</h3>
+                    <div class="contents_box">
+                        <ul class="clearfix">
+                            <li class="clearfix" id="li_acdnt">
+
+                            </li>
+                            <li id="li_constrt">
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //header_popup -->
+    </div>
+</header>
+    <hr>
+    
+    <!--
+        content fragment 사용
+        현재 layout을 사용하는 content fragment의 내용을 삽입한다.
+    -->
+    <!--<th:block layout:fragment="event"></th:block>-->
+    <div id="container">
+        <main id="map_box">
+            <div id="contents">
+    <div class="rowgroup">
+        <div class="map_box">
+            <div id="map" class="map" tabindex="0"></div>
+            <!-- //map -->
+
+            <div class="map_side">
+                <h3 class="skip">교통지도 메뉴</h3>
+                <button type="button" class="open">교통지도 메뉴 열기</button>
+                <ul class="clearfix">
+                    <li><a href="https://its.go.kr/map/searchLocation">검색</a></li>
+                    <li><a href="https://its.go.kr/map/cctv">CCTV</a></li>
+                    <li><a href="https://its.go.kr/map/traffic">교통정보</a></li>
+                    <li><a href="https://its.go.kr/map/outbreak">돌발정보</a></li>
+                    <li><a href="https://its.go.kr/map/detour">우회도로</a></li>
+                    <li><a href="https://its.go.kr/map/travelTime">도시간 소요시간</a></li>
+                    <li><a href="https://its.go.kr/map/favorite">관심구간 설정</a></li>
+                    <li><a href="https://its.go.kr/map/statistics">통계정보</a></li>
+                </ul>
+                <button type="button" class="close">교통지도 메뉴 닫기</button>
+            </div>
+            <!-- //map_side -->
+
+            
+    <div class="map_location">
+        <div class="title_box">
+            <h3 class="skip">위치정보</h3>
+            <button type="button" class="open">위치정보 선택 상자 열기</button>
+            <span class="cont_box">
+                                        <span class="cont" id="span_location"></span>
+                                        <span class="weather">
+                                            <img id="img_temp" src="https://its.go.kr/css/images/template/tab_off.png" alt="기상이미지">
+                                            <!-- 아이콘 파일명 확인(icon_weather01(맑음), icon_weather02(구름조금), icon_weather03(구름많음), icon_weather04(흐림), icon_weather05(비), icon_weather06(소나기), icon_weather07(비눈), icon_weather08(눈) ) -->
+                                            <span class="temp" id="spn_temp"></span>
+                                        </span>
+                                    </span>
+        </div>
+        <div class="contents_box">
+            <!-- 선택 완료 되었을 경우 제이쿼리 문구 추가 ( $('.map_box').removeClass('active_location').find('.map_location').find('div').removeClass('dep_on').find('button').removeClass('on'); ) -->
+            <ul id="ul_cityList">
+            </ul>
+        </div>
+    </div>
+    <!-- //map_weather -->
+
+    <div class="map_other" data-html2canvas-ignore="true">
+        <button type="button" class="map_other_open">지도 설정 상자 열기</button>
+        <div class="map_choose">
+            <h3 class="skip">지도 선택</h3>
+            <ul class="clearfix">
+                <li>
+                    <button type="button" class="on" onclick="normalMaptype(this)">일반지도</button>
+                </li><!-- 활성화될 경우 클래스 on 추가 -->
+                <li>
+                    <button type="button" onclick="satelliteMaptype(this)">위성지도</button>
+                </li>
+                <li>
+                    <button type="button" onclick="naverMapType(this)">NAVER</button>
+                </li>
+            </ul>
+        </div>
+        <!-- //map_choose -->
+
+        <div class="map_cctv">
+            <div class="title_box">
+                <h3 class="skip">CCTV</h3>
+                <button type="button" id="btn_cctv2" class="open" onclick="toggleCctvMarker(false,this)">CCTV 열기</button>
+            </div>
+        </div>
+
+        <div class="map_communication">
+            <div class="title_box">
+                <h3 class="skip">소통정보</h3>
+                <button type="button" class="open">소통정보 선택 상자 열기</button>
+            </div>
+            <div class="contents_box">
+                <ul class="clearfix">
+                    <li>
+                        <button type="button" id="btn_traffic" onclick="setRoadRank(this,'ALL')">전체</button>
+                    </li>
+                    <li>
+                        <button type="button" id="btn_trafficH" onclick="setRoadRank(this,'HIGHWAY')">고속도로</button>
+                    </li><!-- 활성화될 경우 클래스 on 추가 -->
+                    <li>
+                        <button type="button" id="btn_trafficN" onclick="setRoadRank(this,'NATIONAL')">국도</button>
+                    </li>
+                    <li>
+                        <button type="button" id="btn_trafficL" onclick="setRoadRank(this,'LOCAL')">지방도</button>
+                    </li>
+                    <li>
+                        <button type="button" id="btn_trafficE" onclick="setRoadRank(this,'ETC')">일반도로</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- //map_communication -->
+
+        <div class="map_detail">
+            <div class="title_box">
+                <h3 class="skip">지도 세부사항 설정</h3>
+                <button type="button" class="open">지도 세부사항 선택 상자 열기</button>
+            </div>
+            <div class="contents_box">
+                <ul class="clearfix">
+                    <li class="list1" style="display: none;">
+                        <button type="button" id="btn_temp">소통정보</button>
+                    </li>
+                    <li class="list2" style="display: none;">
+                        <button type="button" id="btn_cctv" onclick="toggleCctvMarker(false,this)">CCTV</button>
+                    </li>
+                    <li class="list3">
+                        <button type="button" id="btn_area" onclick="toggleRegionBoundariesLayer(this)">지역경계</button>
+                    </li>
+                    <li class="list4">
+                        <button type="button" id="btn_label" onclick="toggleLabelLayer(this)">명칭</button>
+                    </li>
+                    <li class="list5">
+                        <button type="button" id="btn_constrt" onclick="toggleConstrctMarker(false,this)">공사정보</button>
+                    </li>
+                    <li class="list6">
+                        <button type="button" id="btn_acdnt" onclick="toggleAccidentMarker(false,this)">사고정보</button>
+                    </li>
+                    <li class="list7">
+                        <button type="button" id="btn_vms" onclick="toggleVmsMarker(false,this)">VMS</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- //map_detail -->
+
+        <div class="map_service">
+            <h3 class="skip">지도 서비스</h3>
+            <div class="operation">
+                <button type="button" id="btn_current" class="current" onclick="getLocation()">현재 위치</button>
+                <ul class="clearfix">
+                    <li>
+                        <button type="button" onclick="plusZoom()">지도 확대</button>
+                    </li>
+                    <li>
+                        <button type="button" onclick="minusZoom()">지도 축소</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="link">
+                <ul class="clearfix">
+                    <li>
+                        <button type="button" id="btn_capture" onclick="startCapture()" style="display:block;">저장</button>
+                    </li>
+                    <li>
+                        <button type="button" id="btn_share" onclick="shareUrl()">URL복사</button>
+                    </li>
+                    <li>
+                        <button type="button" id="area" onclick="toggleAreaButton()">면적</button>
+                    </li>
+                    <li>
+                        <button type="button" id="distance"  onclick="toggleDistanceButton()">거리</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- //map_service -->
+
+<!--         <div class="map_twitter">
+            <h3 class="skip">트위터 서비스</h3>
+            <button type="button" class="open" onclick="getTwitter()">트위터 서비스 상자 열기</button>
+        </div> -->
+        <!-- //map_twitter -->
+
+        <div class="map_legend">
+            <h3 class="skip">지도 범례</h3>
+            <button class="open">지도범례</button>
+            <div class="contents_box">
+                <table>
+                    <caption>지도범례 - 도시부, 지방부, 도시고속, 고속도로 등의 안내</caption>
+                    <colgroup>
+                        <col style="width:20%;">
+                        <col style="width:20%;">
+                        <col style="width:20%;">
+                        <col style="width:20%;">
+                        <col style="width:20%;">
+                    </colgroup>
+                    <thead>
+                    <tr>
+                        <th scope="col">(Km/h)</th>
+                        <th scope="col">도시부</th>
+                        <th scope="col">지방부</th>
+                        <th scope="col">도시고속</th>
+                        <th scope="col">고속도로</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row" title="녹색">원활</th>
+                        <td>25이상</td>
+                        <td>50이상</td>
+                        <td>50이상</td>
+                        <td>80이상</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" title="노란색">서행</th>
+                        <td>15~25</td>
+                        <td>30~50</td>
+                        <td>30~50</td>
+                        <td>40~80</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" title="빨간색">정체</th>
+                        <td>15미만</td>
+                        <td>30미만</td>
+                        <td>30미만</td>
+                        <td>40미만</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" title="회색">정보없음</th>
+                        <td colspan="4">대상정보없음</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- //map_legend -->
+        <button type="button" class="map_other_close">지도 설정 상자 닫기</button>
+    </div>
+    <div class="map_notice">
+        <h3 class="skip">공지사항</h3>
+        <div class="cont_box">
+            <a href="https://its.go.kr/notification/notificationDetail?seqNo=1444" class="cont">국가교통정보센터 재해복구[DR] 훈련 실시</a>
+        </div>
+        <a href="https://its.go.kr/notification/notification" class="more">더보기</a>
+    </div>
+
+            <!-- //map_other -->
+
+            <!-- //map_notice -->
+        </div>
+    </div>
+    <!-- //map_box -->
+    <!-- //rowgroup -->
+
+    <!--<div class="rowgroup2">
+        <a href="#" rel="nofollow" class="btn_move">컨텐츠영역이동</a>
+        <div class="wrap clearfix">
+            <div class="top_box">
+                <div class="title_box">
+                    <h2 class="title">실시간 돌발정보</h2>
+                </div>
+                <div class="cont_box">
+                    <span class="cont" id="div_outbrkCnt"><strong>0</strong>건</span>
+                    <span class="date" th:text="${#dates.format(#dates.createNow(),'MM/dd HH:mm') }"></span>
+                    <button type="button" class="btn_refresh" onclick="mainMap.refreshData()">새로고침</button>
+                    &lt;!&ndash;08/21(Fri) 16:10&ndash;&gt;
+                </div>
+            </div>
+            <div class="colgroup">
+                <section class="charts">
+                    <h3>시/도별 사고 현황</h3>
+                    <div class="contents_box">
+                        <canvas id="acdntChart" style="width: 90%;height: 90%"></canvas>
+                    </div>
+                </section>
+            </div>
+            &lt;!&ndash; //colgroup1 &ndash;&gt;
+            <div class="colgroup2">
+                <section class="charts">
+                    <h3>시/도별 공사 현황</h3>
+                    <div class="contents_box">
+                        <canvas id="constrtChart" style="width: 90%;height: 90%"></canvas>
+                    </div>
+                </section>
+            </div>
+            &lt;!&ndash; //colgroup2 &ndash;&gt;
+            <div class="colgroup3">
+                <section class="status">
+                    <h3>노선별 사고/공사 현황</h3>
+                    <div class="contents_box" th:with="ways=${@mapServiceImpl.getWaysList()}">
+                        <form>
+                            <input type="hidden" th:name="${(_csrf == null)?'_csrf':_csrf.parameterName}"
+                                   th:value="${(_csrf == null)?'t':_csrf.token}">
+                            <fieldset>
+                                <legend>노선별 사고/공사 현황</legend>
+                                <label for="sel_highways" class="skip">고속도로 선택(선택된 항목으로 아래 리스트 변경)</label>
+                                <select id="sel_highways" onchange="mainMap.onChageByLaneOutbrk(this,'HIGHWAY')"
+                                        data-type="H">
+                                    <option value="">고속도로 선택</option>
+                                    <option th:value="${highway.ROAD_ID}"
+                                            th:each="highway:*{ways.get('HIGHWAY')}"
+                                            th:text="${highway.ROUTE_NM}"></option>
+                                </select>
+                                <label for="sel_nationals" class="skip">국도 선택(선택된 항목으로 아래 리스트 변경)</label>
+                                <select id="sel_nationals" onchange="mainMap.onChageByLaneOutbrk(this,'NATIONAL')"
+                                        data-type="NH">
+                                    <option value="">국도 선택</option>
+                                    <option th:value="${national.ROAD_ID}"
+                                            th:each="national:*{ways.get('NATIONAL')}"
+                                            th:text="${national.ROUTE_NM}"></option>
+                                </select>
+                            </fieldset>
+                        </form>
+                        <div class="list_box">
+                            <ul class="clearfix" id="ul_outbreaks">
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            &lt;!&ndash; //colgroup3 &ndash;&gt;
+
+        </div>
+    </div>
+    &lt;!&ndash; //rowgroup2 &ndash;&gt;
+    <div class="rowgroup3">
+        <div class="wrap clearfix">
+            <div class="colgroup">
+                <section class="shortcut">
+                    <h2 class="skip">바로가기</h2>
+                    <ul class="clearfix">
+                        <li>
+                            <div class="contents_box">
+                                <div class="title_box">
+                                    <strong class="title">오픈데이터</strong>
+                                    <p class="cont">쉽고 빠르게 웹서비스 개발하기! <br>교통정보는 오픈데이터에서 제공합니다.</p>
+                                </div>
+                                <div class="cont_box">
+                                    <a th:href="@{/opendata/intro}">바로가기</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contents_box">
+                                <div class="title_box">
+                                    <strong class="title">표준노드링크</strong>
+                                    <p class="cont">표준화된 교통정보체계 제공으로 <br>스마트 대한민국을 만들어 갑니다!</p>
+                                </div>
+                                <div class="cont_box">
+                                    <a th:href="@{/nodelink/intro}">바로가기</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contents_box">
+                                <div class="title_box">
+                                    <strong class="title">ITS국제협력센터</strong>
+                                    <p class="cont">ITS 해외사업 발굴, 정보수집, 마케팅 등<br>
+                                        우리 기업의 ITS수출을 체계적으로 지원합니다!</p>
+                                </div>
+                                <div class="cont_box">
+                                    <a href="https://intl.its.go.kr/" target="_blank" title="새창">바로가기</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+            &lt;!&ndash; //colgroup1 &ndash;&gt;
+            <div class="colgroup2">
+                <section class="other_shortcut">
+                    <h2 class="skip">기타 바로가기</h2>
+                    <ul class="clearfix">
+                        <li><a th:href="@{/notification/useInformation}" class="cont_box">이용정보</a></li>
+                        <li><a th:href="@{/information/introTrafficInfoCenter}" class="cont_box">교통정보센터 소개</a></li>
+                        <li><a th:href="@{/knowledge/introKnowledgeInfoCenter}" class="cont_box">지식정보센터 소개</a></li>
+                        <li><a th:href="@{/knowledge/termSearchITS}" class="cont_box">ITS용어검색</a></li>
+                        <li><a th:href="@{/notification/notification}" class="cont_box">공지사항 바로가기</a></li>
+                    </ul>
+                </section>
+            </div>
+            &lt;!&ndash; //colgroup2 &ndash;&gt;
+        </div>
+    </div>-->
+    <!-- //rowgroup3 -->
+</div>
+            <label for="txa_shareUrl" tabindex="-1" style="display: none;">URL복사</label>
+            <textarea id="txa_shareUrl" style="position:absolute;top:-9999em;" title="URL복사" tabindex="-1"></textarea>
+        </main>
+    </div>
+    <hr>
+    <!-- footer fragment 사용 -->
+    <footer id="footer">
+    <script src="https://its.go.kr/js/common/footer.js"></script>
+    <div class="wrap">
+        <div class="footer_logo"><span>국토교통부</span></div>
+        <div class="foot_shortcut">
+            <h2 class="skip">소속기관 및 관련사이트 바로가기</h2>
+            <button type="button" class="open" data-id="ControlID-5">소속기관 및 관련사이트 바로가기 <span>열기</span></button>
+            <div class="contents_box">
+                <span style="margin-left:10px;color:white;">소속기관</span>
+                <ul>
+                    <li><a href="https://www.ngii.go.kr/kor/main.do" target="_blank" title="새창">국토지리정보원</a></li>
+                    <li><a href="http://www.molit.go.kr/srocm/intro.do" target="_blank" title="새창">서울지방국토관리청</a></li>
+                    <li><a href="http://www.molit.go.kr/wrocm/intro.do" target="_blank" title="새창">원주지방국토관리청</a></li>
+                    <li><a href="http://www.molit.go.kr/drocm/intro.do" target="_blank" title="새창">대전지방국토관리청</a></li>
+                    <li><a href="http://www.molit.go.kr/irocm/intro.do" target="_blank" title="새창">익산지방국토관리청</a></li>
+                    <li><a href="http://www.molit.go.kr/brocm/intro.do" target="_blank" title="새창">부산지방국토관리청</a></li>
+                    <li><a href="http://www.molit.go.kr/atmo/intro.do" target="_blank" title="새창">항공교통본부</a></li>
+                    <li><a href="http://www.molit.go.kr/iatcro/USR/WPGE0201/m_16184/DTL.jsp" target="_blank" title="새창">인천항공교통관제소</a></li>
+                    <li><a href="https://www.nakdongriver.go.kr/sumun/brief.do" target="_blank" title="새창">낙동강홍수통제소</a></li>
+                    <li><a href="http://www.geumriver.go.kr/html/index.jsp" target="_blank" title="새창">금강홍수통제소</a></li>
+                    <li><a href="http://oclt.molit.go.kr/USR/WPGE0201/m_16208/DTL.jsp" target="_blank" title="새창">중앙토지수용위원회</a></li>
+                    <li><a href="https://araib.molit.go.kr/intro.do" target="_blank" title="새창">항공철도사고조사위원회</a></li>
+                    <li><a href="http://police.molit.go.kr/intro.do" target="_blank" title="새창">철도특별사법경찰대</a></li>
+                </ul>
+                <span style="margin-left:10px;color:white;">관련사이트</span>
+                <ul>
+                    <li><a href="https://its.go.kr:9003" target="_blank" title="새창">ITS 현장시설물 관리시스템</a></li>
+                    <!-- <li><a href="https://its.go.kr:9001" target="_blank" title="새창">소통정보 품질관리시스템</a></li> -->
+                    <li><a href="http://its.go.kr:18088/" target="_blank" title="새창">ITS 데이터 분석시스템</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer_nav">
+            <ul class="clearfix">
+                <li><a href="https://its.go.kr/common/infoPolicyPage?service=rejectEmailHarvestPolicy">이메일주소무단수집거부</a></li>
+                <li><a href="https://its.go.kr/common/infoPolicyPage?service=privacyPolicy" class="po">개인정보처리방침</a></li>
+                <li><a href="https://its.go.kr/common/infoPolicyPage?service=copyrightPolicy">저작권보호</a></li>
+                <li><a href="https://its.go.kr/notification/reqQnaStatus">Q&A</a></li>
+                <li>
+                    <a href="https://stat.molit.go.kr/portal/quality/qualityCenterWrite.do?system_id=S0064" target="_blank">품질오류신고</a>
+                </li>
+                <li><a href="https://stat.molit.go.kr/portal/quality/qualityCenterList.do?system_id=S0064" target="_blank">품질오류신고확인</a></li>
+                <li><a href="https://its.go.kr/Eng/">English</a></li>
+            </ul>
+        </div>
+        <div class="footer_info">
+            <div class="add">
+                <address>30064 세종특별자치시 도움6로 11 정부세종청사(6동)</address>
+                <span>Tel : 044-862-4333</span>
+            </div>
+            <p class="copy">Copyright ⓒ MOLIT All Right Reserved.</p>
+        </div>
+    </div>
+</footer>
+</div>
+<div class="twitter_popup">
+    <div class="box_wrap">
+        <div class="title_box">
+            <div class="title">국가교통정보센터 Twitter</div>
+        </div>
+        <div class="contents_box" id="snsView">
+            <ul id="snsViewUl">
+            </ul>
+        </div>
+        <button type="button" class="close">트위터 서비스 상자 닫기</button>
+    </div>
+</div>
+<script>
+	/**
+	* 브이월드 점검 , 기본 맵 네이버로 교체 (임시) 20230811
+	*/
+	
+	$(function(){
+		if(typeof naverMapType ==='function'){
+			//naverMapType();
+			//$('div.map_choose button').removeClass('on');
+			//$('div.map_choose button:eq(2)').addClass('on');
+			$('div.map_choose li:eq(2)').remove(); //군부대관련 지도표출 에러문제로 임시(네이버버튼) 폐쇄
+			console.log('naverMapType() 실행');
+		}else{
+			console.log('naverMapType() 없음');
+		}
+	});
+	
+</script>
+</body>
+</html>
