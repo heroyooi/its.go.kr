@@ -18,7 +18,8 @@
 .popup-wrap .form-list > li .input-wrap{flex-grow:1;}
 .popup-wrap .form-list > li input,
 .popup-wrap .form-list > li select{height:50px;width:100%;padding:15px;font-size:15px;color:#000;line-height:1;}
-.popup-wrap .inquiry-info{font-size:15px;line-height:1.2;color:#757575;padding:15px;border:1px solid #c6c6c6;margin-top:10px;}
+.popup-wrap .text-info{font-size:15px;line-height:1.2;color:#757575;padding:15px;resize:none;width:100%;height:86px;min-height:initial;border:0;}
+.popup-wrap .text-info-wrap{border:1px solid #c6c6c6;margin-top:10px;}
 .popup-wrap .btns-wrap{text-align:center;font-size:0;}
 .popup-wrap .btns-wrap a{font-size:14px;color:#000;letter-spacing:-1px;display:inline-block;padding:12px 15px;border-radius:50px;border:1px solid #c6c6c6;background-color:#fff;line-height:1;margin-left:10px;}
 .popup-wrap .btns-wrap a:first-child{margin-left:0;}
